@@ -1,14 +1,19 @@
+import { useState } from "react";
+
 interface Props {
   price: number
+  stock?: number
 }
 
-function ProductDetailCheckout({ price }: Props) {
+function ProductDetailCheckout({ price, stock }: Props) {
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <div className="product-checkout-block">
       <div className="checkout-container">
         <span className="checkout-total-label">Total:</span>
         <h2 id="price" className="checkout-total-price">
-          ${price.toLocaleString()}
+          ${(price * quantity).toLocaleString()}
         </h2>
         <p className="checkout-description">
           Incluye impuesto PAIS y percepción AFIP. Podés recuperar AR$
@@ -36,7 +41,12 @@ function ProductDetailCheckout({ price }: Props) {
         </ul>
         <div className="checkout-process">
           <div className="top">
-            <input type="number" min="1" defaultValue="1" />
+            <input
+              type="number"
+              min="1"
+              max={stock}
+              defaultValue={quantity}
+              onChange={e => setQuantity(Number(e.target.value))} />
             <button type="button" className="cart-btn">
               Añadir al Carrito
             </button>

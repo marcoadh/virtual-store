@@ -14,7 +14,7 @@ function MainDetails() {
     return <p>Cargando</p>
   }
 
-  const { title, description, price, images, colors } = findedProduct
+  const { title, description, price, stock, images, colors } = findedProduct
 
   return (
     <>
@@ -23,7 +23,7 @@ function MainDetails() {
           <div id="details" className="columns-container">
             <ProductDetailImages images={images} title={title} />
             <ProductDetailDescription title={title} colors={colors} description={description} />
-            <ProductDetailCheckout price={price} />
+            <ProductDetailCheckout price={price} stock={stock} />
           </div>
         </div>
       </main>
