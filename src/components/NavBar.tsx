@@ -5,10 +5,10 @@ function Header() {
   return (
     <header>
       <div className="header-container">
-        <a href="./index.html" className="header-logo">
+        <a href="/" className="header-logo">
           <img
             className="header-logo-img"
-            src="./assets/tiendamia-logo.svg"
+            src="/assets/tiendamia-logo.svg"
             width="218"
             alt="Logo store"
           />

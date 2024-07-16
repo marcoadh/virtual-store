@@ -130,7 +130,7 @@
   text-align: right;
 }
 .product-description {
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
 }
